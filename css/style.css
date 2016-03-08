@@ -5,7 +5,7 @@ html, body{
 	height: 100%;
 }
 .container{
-	background-image: url("../img/bldg.jpg");
+	background-image: url("../../img/bldg.jpg");
 	background-position: center center;
 	background-size: cover;
 	width: 100%;
