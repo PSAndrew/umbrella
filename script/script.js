@@ -8,16 +8,17 @@ $("#findMyweather").click(function(event){
 		console.log($("#city").val());
 
 		$.get('php/scraper.php?city='+$("#city").val(), function(data){
-			console.log($("#city"));
+			console.log(data);
 
 			if(data==""){
-				$("#error").html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>').fadeIn();
+				$("#error").html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+'Could not find weather data for that city. Please try again.').fadeIn();
 			}else{
 				$("#success").html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>The forecast is: </strong>'+data).fadeIn();
 			}
 		});
 
 	}else{
-		$("#error").html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+'Could not find weather data for that city. Please try again.').fadeIn();
+		
+		$("#error").html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+'Please try again.').fadeIn();
 	}
 });
